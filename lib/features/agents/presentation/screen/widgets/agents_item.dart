@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class AgentsItem extends StatelessWidget {
   final Color color1;
@@ -38,22 +39,29 @@ class AgentsItem extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  color1,
-                  color2,
+                  color3,
                   color3,
                   color4,
+                  color4,
+                  color1,
+                  color1,
                 ],
               ),
             ),
           ),
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.height * 0.12,
-          child: Image.network(
-            image,
-            height: 450,
-          ),
-        ),
+            bottom: MediaQuery.of(context).size.height * 0.12,
+            child: CachedNetworkImage(
+              imageUrl: image,
+              height: 450,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.transparent,
+                ),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            )),
         Positioned(
           left: 35,
           bottom: 50,

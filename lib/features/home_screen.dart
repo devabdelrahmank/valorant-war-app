@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:valorant_war_app/core/my_colors.dart';
 import 'package:valorant_war_app/core/my_image.dart';
 import 'package:valorant_war_app/core/spacer.dart';
-import 'package:valorant_war_app/features/agents/agents_screen.dart';
-import 'package:valorant_war_app/features/maps/maps_screen.dart';
-import 'package:valorant_war_app/features/wepons/wepons_screen.dart';
+import 'package:valorant_war_app/features/agents/presentation/screen/agents_screen.dart';
+import 'package:valorant_war_app/features/maps/presentation/screens/maps_screen.dart';
+import 'package:valorant_war_app/features/wepons/presentation/screens/wepons_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
                 labelPadding: const EdgeInsets.symmetric(horizontal: 7),
                 indicatorWeight: 0.7,
                 //   indicatorColor: Colors.yellow,
-                overlayColor: MaterialStateProperty.all(Colors.white),
+                overlayColor: WidgetStateProperty.all(Colors.white),
                 controller: tabController,
                 tabs: tabs,
                 indicatorSize: TabBarIndicatorSize.tab,
